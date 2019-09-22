@@ -4,6 +4,9 @@
   "devDependencies": {
     "jasmine-core": "^3.5.0",
     "jshint": "^2.10.2",
+    "karma": "^4.3.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-jshint-preprocessor": "0.0.6",
     "sinon": "^7.4.2"
   },
   "scripts": {
