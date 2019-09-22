@@ -27,3 +27,8 @@ module.exports = function(config) {
   });
 };
 ```
+
+### package.json + `npm install` = reinstall all dependencies
+when node_modules and package-lock.json are polluted, use `npm install` to set everything right. 
+
+I removed node_modules and package-lock.json, and ran `npm install`, and `npm test` still works. Plus, there is only one deprecation 'minimatch' which is vulnerable to attack, and run `npm install minimatch` to update it into property `dependencies` instead of `devDependencies` inside 'package.json'.

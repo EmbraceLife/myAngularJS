@@ -15,5 +15,7 @@
     "lint": "jshint src test",
     "test": "karma start"
   },
-  "dependencies": {}
+  "dependencies": {
+    "minimatch": "^3.0.4"
+  }
 }
