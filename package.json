@@ -7,6 +7,9 @@
     "karma": "^4.3.0",
     "karma-jasmine": "^2.0.1",
     "karma-jshint-preprocessor": "0.0.6",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.16",
     "sinon": "^7.4.2"
   },
   "scripts": {
