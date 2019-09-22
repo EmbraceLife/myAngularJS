@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "jshint": "^2.10.2"
+  },
+  "scripts": {
+    "lint": "jshint src test"
   }
 }
