@@ -1,3 +1,5 @@
+const puppeteer = require('puppeteer');
+process.env.CHROME_BIN = puppeteer.executablePath();
 module.exports = function(config) { 
   config.set({
     frameworks: ['jasmine'],
@@ -9,6 +11,6 @@ module.exports = function(config) {
       'test/**/*.js': ['jshint'],
       'src/**/*.js': ['jshint']
     },
-    browsers: ['PhantomJS']
+    browsers: ['ChromeHeadless']
   })
 }

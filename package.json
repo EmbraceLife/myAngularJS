@@ -5,14 +5,15 @@
     "jasmine-core": "^3.5.0",
     "jshint": "^2.10.2",
     "karma": "^4.3.0",
+    "karma-chrome-launcher": "^3.1.0",
     "karma-jasmine": "^2.0.1",
     "karma-jshint-preprocessor": "0.0.6",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "phantomjs": "^2.1.7",
+    "puppeteer": "^1.20.0",
     "sinon": "^7.4.2"
   },
   "scripts": {
     "lint": "jshint src test",
     "test": "karma start"
-  }
+  },
+  "dependencies": {}
 }
