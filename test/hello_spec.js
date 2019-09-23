@@ -1,11 +1,10 @@
-var sayHello = require('../src/hello');
+var sayHello = require('../src/hello'); 
 
 describe("Hello", function() {
 
   it("says hello", function() {
 
-    expect(sayHello()).toBe("Hello, World!");
-  
-  });
+    expect(sayHello('Jane')).toBe("Hello, Jane!");
 
+  });
 });

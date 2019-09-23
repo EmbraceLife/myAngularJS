@@ -92,3 +92,50 @@ npm install --save-dev watchify
 ```
 
 Note: the book has not instructed us to test the debug feature yet in this section.
+
+### Include Lo-Dash And jQuery
+
+Why? 
+Original angular.js uses no third party libraries (only jQuery it has what angular.js needs). But we are going to use Lodash and jQuery for low-level operations, so that we can focus on angular.js itself.
+
+What Lodash is used for?
+Array and object manipulation, such as equality checking and cloning
+
+What jQuery is used for?
+DOM querying and manipulation
+
+Install Lodash and jQuery as runtime dependencies not development Dependencies
+
+```node
+<!-- use --save for runtime dependencies, --save-dev for dev dependencies -->
+
+npm install --save lodash jquery
+```
+
+Try Lodash
+
+```js
+/* src/hello.js */
+var _ = require('lodash');
+
+module.exports = function sayHello(to) {
+
+return _.template("Hello, <%= name %>!")({name: to});
+
+};
+
+```
+
+```js
+/* test/hello_spec.js */
+var sayHello = require('../src/hello'); 
+
+describe("Hello", function() {
+
+  it("says hello", function() {
+
+    expect(sayHello('Jane')).toBe("Hello, Jane!");
+
+  });
+});
+```
