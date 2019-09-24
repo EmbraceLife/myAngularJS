@@ -166,3 +166,39 @@ describe("Hello", function() {
 - scope inheritance for sharing data and events
 - efficient *dirty-checking* for arrays and objects
 - the event system: **$on**, **$emit**, **$broadcast**
+
+
+## Chapter 1 Scopes and Digest
+
+Key points on Angular scopes
+
+- just *plain old javascript objects*
+- can *attach properties* like any other objects
+- also has capacities to **observe changes in data structures**
+
+### Scope Objects
+
+How to create Scopes?
+
+- **new** operator + Scope **constructor**
+- return a plain old JS object
+
+Create our first test for this behavior above
+
+```js
+/* test/scope_spec.js */
+'use strict';
+
+var Scope = require('../src/scope');
+
+describe("Scope", function() {
+
+  it("can be constructed and used as an object", function(){
+    var scope = new Scope();
+    scope.aProperty = 1;
+
+    expect(scope.aProperty).toBe(1);
+  })
+});
+
+```
