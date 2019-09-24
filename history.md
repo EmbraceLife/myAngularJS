@@ -139,3 +139,30 @@ describe("Hello", function() {
   });
 });
 ```
+
+## Part I Scopes
+
+### Intro
+
+#### What is angularJS scopes
+
+- one of AngularJS's central building blocks
+
+#### What is angularJS scopes for
+
+- Sharing data between controllers and views
+- Sharing data between different parts of the application 
+- Broadcasting and listening for events
+- Watching for changes in data
+
+#### watching for changes in data
+
+- scopes implement a *dirty-checking* to notify when data changes on a scope
+- it is part of secret sauce of *data binding*
+
+#### objective of part I
+
+- implement *digest cycle* and *dirty-checking* including **$watch**, **$digest**, **$apply**
+- scope inheritance for sharing data and events
+- efficient *dirty-checking* for arrays and objects
+- the event system: **$on**, **$emit**, **$broadcast**
