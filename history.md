@@ -178,12 +178,12 @@ Key points on Angular scopes
 
 ### Scope Objects
 
-How to create Scopes?
+#### How to create Scopes
 
 - **new** operator + Scope **constructor**
 - return a plain old JS object
 
-Create our first test for this behavior above
+#### Create our first test for this behavior above
 
 ```js
 /* test/scope_spec.js */
@@ -202,3 +202,17 @@ describe("Scope", function() {
 });
 
 ```
+
+#### write scope.js based on scope_spec.js
+
+```js
+'use strict';
+
+function Scope(){
+
+}
+
+module.exports = Scope;
+
+```
+
