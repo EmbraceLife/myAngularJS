@@ -216,3 +216,71 @@ module.exports = Scope;
 
 ```
 
+### Watching Object Properties: $watch And $digest
+
+#### $watch, (watcher), $digest
+
+Behides being a plain object, *Scope* has two methods *$watch* and *$digest* to enable the capacity of watching data changes.
+
+Together, *$watch* and *$digest* form the *digest cycle* to reacting to changes in data.
+
+*$watch* is a method to create *a watcher* which is an object consisting of two functions:
+
+- watch function: specifies which data to watch (in part 2 of the book, we will learn to implement watch expression instead of function)
+- listener function: gets called when that piece of data changes
+
+After the watchers are created upon to the scope, *$digest* will iterate each watcher and invoke its listener function.
+
+#### specification for $watch and $digest
+
+with *new* and *constructor*, Scope is really a class object. There will be many scope instances to be created. Each scope should have $watch and $digest method, therefore, they should be prototype methods on Scope.
+
+```js
+scope.$watch(watchFn, listenerFn); // add a watcher to a scope
+scope.$digest(); // call listener if data changes
+```
+
+Since *$digest* is a prototype method to Scope, we can test it within Scope by using a nested describe block
+
+```js
+describe("Scope", function(){
+  it("can be constructed and used as an object", function(){
+
+  });
+
+  // nested describe
+  describe("digest", function(){
+
+  });
+});
+
+```
+
+In case there are *more specs* (more `it(...);`) which **share the same setup** such as `scope = new Scope();`, we can avoid repetition by using:
+
+```js
+// ....
+describe("digest", function(){
+  var scope;
+
+  beforeEach(function(){
+    scope = new Scope();
+  });
+
+  // it(...);
+  // it(...);
+});
+
+```
+
+Since $digest will invoke listener function, to test it we use `jasmine.createSpy` and `toHaveBeenCalled()`. (search Jasmine tutorial for details)
+
+```js
+var listenerFn = jasmine.createSpy();
+// ...
+expect(listenerFn).toHaveBeenCalled();
+```
+
+#### Karma debugger
+
+Karma + browserify debug flag true (karma.conf.js) allows use to browser debugger tool to experiment with the src and test files
